@@ -51,65 +51,36 @@ void printConfusionMatrix(void)
 
 void makeHundredFakeClassifications(void)
 {
-	for(int i = 0;i<6;i++)
-	{
-		int x = measurements[i][0];
-		int y = measurements[i][1];
-		int z = measurements[i][2];
-		for(int j = 0;j<100;j++)
-		{
-    		int winner = calculateDistanceToAllCentrePointsAndSelectWinner(x,y,z);
-			CM[i][winner] = CM[i][winner]+1;
-		}
-	}
+   /*******************************************
+   Jos ja toivottavasti kun teet toteutuksen paloissa eli varmistat ensin,
+   että etäisyyden laskenta 6 keskipisteeseen toimii ja osaat valita 6 etäisyydestä
+   voittajaksi sen lyhyimmän etäisyyden, niin silloin voit käyttää tätä aliohjelmaa
+   varmistaaksesi, että etäisuuden laskenta ja luokittelu toimii varmasti tunnetulla
+   itse keksimälläsi sensoridatalla ja itse keksimilläsi keskipisteillä.
+   *******************************************/
+   printk("Make your own implementation for this function if you need this\n");
 }
 
 void makeOneClassificationAndUpdateConfusionMatrix(int direction)
 {
-   // let's initialize Center points for current ADC and
-   // accelerator
-   CP[0][0] = 1850;
-   CP[0][1] = 1500;
-   CP[0][2] = 1500;
-   CP[1][0] = 1200;
-   CP[1][1] = 1500;
-   CP[1][2] = 1500;
-
-   CP[2][0] = 1500;
-   CP[2][1] = 1850;
-   CP[2][2] = 1500;
-   CP[3][0] = 1500;
-   CP[3][1] = 1200;
-   CP[3][2] = 1500;
-
-   CP[4][0] = 1500;
-   CP[4][1] = 1500;
-   CP[4][2] = 1850;
-   CP[5][0] = 1500;
-   CP[5][1] = 1500;
-   CP[5][2] = 1200;
-   // make one measurement with ADC to get x,y,z values.
-   struct Measurement m = readADCValue();
-   // and then calculate that measurement result distance to all 6 centre points
-   // and select shortest distance.
-   int winner = calculateDistanceToAllCentrePointsAndSelectWinner(m.x,m.y,m.z);
-   CM[direction][winner] = CM[direction][winner]+1;
+   /**************************************
+   Tee toteutus tälle ja voit tietysti muuttaa tämän aliohjelman sellaiseksi,
+   että se tekee esim 100 kpl mittauksia tai sitten niin, että tätä funktiota
+   kutsutaan 100 kertaa yhden mittauksen ja sen luokittelun tekemiseksi.
+   **************************************/
+   printk("Make your own implementation for this function if you need this\n");
 }
 
 int calculateDistanceToAllCentrePointsAndSelectWinner(int x,int y,int z)
 {
-   int minimumDistance = 10000;
-   int centerPoint = 7; 
-   for(int i=0;i<6;i++)
-   {
-	  int distance = sqrt(pow(CP[i][0]-x,2) + pow(CP[i][1]-y,2) + pow(CP[i][2]-z,2));
-	  if(distance<minimumDistance)
-	  {
-         centerPoint = i;
-		 minimumDistance = distance;
-	  }
-   }
-   return centerPoint;
+   /***************************************
+   Tämän aliohjelma ottaa yhden kiihtyvyysanturin mittauksen x,y,z,
+   laskee etäisyyden kaikkiin 6 K-means keskipisteisiin ja valitsee
+   sen keskipisteen, jonka etäisyys mittaustulokseen on lyhyin.
+   ***************************************/
+   
+   printk("Make your own implementation for this function if you need this\n");
+   return 0;
 }
 
 void resetConfusionMatrix(void)
