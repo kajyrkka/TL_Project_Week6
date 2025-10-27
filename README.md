@@ -1,41 +1,102 @@
-# TL_Project_Week6
+# 🧩 TL_Project_Week6
 
-## 0. Ohjeet Scrum tiimille (= 6 työparia) 
-	  Viikon vastuullinen työpari pitää daily palaverit keskiviikkoisin ja torstaisin.
-	  Scrum-tiimin discord kanavalle raportoidaan daily palaverin tulokset (ketkä paikalla, missä
-	  kukin työpari on menossa ja mahdolliset ongelmat). 
-	  
-	  Viikon vastuullinen työpari järjestää perjantaisin sprint review palaverin Scrum tiimille
-	  ja koostaa Scrum-tiimin discord kanavalle raportin viikon tuloksista kunkin työparin osalta.
-	  Raportissa kerrotaan myös mikä on seuraavan viikon vastuullinen pari.	  
-	  
-	  Tutustukaa alla oleviin viikon tehtäviin ja tehkää githubin projektin Kanban tauluun 
-	  suunnitelma, minkälaisissa stepeissä aiotte viikon tehtävät tehdä ja testata. 
+## 🎯 Viikon perustavoite
+Tämän viikon päätavoitteena on toteuttaa **K-means-luokittelija-algoritmi NRF5340DK-alustalle**.  
+Lisätehtävänä voit toteuttaa **konvoluutioneuroverkon (CNN)** mikrokontrollerissa C-kielellä.
 
-## 1. Viikon perustavoite = Opetetun K-means algoritmin toteutus ja suorituskyvyn mittaus
+---
 
-Toteutetaan K-means algoritmi nrf5340dk alustalle. Eli mitataan kiihtyvyysanturilla x,y,z
-kiihtyvyysarvot ja lasketaan tuon 3D-pisteen etäisyys kaikkiin 6 keskipisteeseen, jotka
-on edellisellä viikolla opetettu pythonilla. Nyt pitäisi siis olla esim keskipisteet.h
-tiedosto, jonka voisi incluudata c-ohjelmaan helposti.
+## ⚙️ 0. Ohjeet Scrum-tiimille (= 6 työparia)
 
-Saat tehtävässä annettuna github repositoryn https://github.com/kajyrkka/TL_Project_Week6. 
-Kloonaa se omalle koneelle, käännä repositoryn mukana tullut nrf5340dk ohjelma ja tutustu
-koodiin. Sinun tehtävänä on toteuttaa confusion.c tiedostoon sieltä puuttuvat aliohjelmien
-toteutukset ja tehdä sen jälkeen mittaukset omalla laitteellasi ja kiintyvyysanturilla,
-jota käytit viikon 2 ja 3 aikana, jolloin opetusdata kerättiin. Tee jokaiseen 6 suuntaan
-n. 100 kpl mittauksia.
+### Viikon vastuullisen työparin tehtävät
+- Järjestää **daily-palaverit keskiviikkoisin ja torstaisin**  
+- Raportoi Scrum-tiimin **Discord-kanavalle**:
+  - Ketkä olivat paikalla  
+  - Missä vaiheessa kukin työpari on menossa  
+  - Mahdolliset ongelmat  
+- Järjestää **sprint review -palaverin perjantaina**  
+- Laatii **Discordiin raportin viikon tuloksista** (mukaan lukien seuraavan viikon vastuullinen työpari)
 
-Tuloksena pitäisi olla confusion matrix K-means luokittelu algoritmin toiminnasta/hyvyydestä.
-Lisää confusion matrix kuva omaan github repositoryyn readme-tiedostoon.
+### Kanban-suunnitelma
+Laadi GitHubin **projektin Kanban-tauluun** suunnitelma, miten aiotte toteuttaa ja testata viikon tehtävät.  
+Pilkkoa tarvittaessa tehtävät pienempiin osiin, kuten:
+- 1️⃣ Etäisyyden laskenta-aliohjelma (3D-pisteiden välinen etäisyys)
+- 2️⃣ Confusion matrixin laskenta ja visualisointi
 
-Jos et pääse alkuun pelkkään koodiin tutustumalla, niin katso https://youtu.be/O2OIN-gJeo4,
-joka selittää ohjelmaa ja tehtävää vielä vähän lisää. 
+---
 
+## 🧠 1. K-means-luokittelijan toteutus NRF5340DK-alustalla
 
-## 2. Viikon ylimääräinen tavoite = Opetetun neuroverkon toteutus ja suorituskyvyn mittaus
+### Tavoite
+Toteuta K-means-luokittelija-algoritmi, joka mittaa kiihtyvyysanturilla **x, y, z -arvot** ja laskee tämän 3D-pisteen etäisyyden kaikkiin kuuteen keskipisteeseen, jotka opetettiin Pythonilla edellisellä viikolla.  
+Keskipisteet tuodaan ohjelmaan `keskipisteet.h`-tiedostona.
 
-Toteuta Colabissa opettamasi neuroverkko nrf5340dk alustalle ja mittaa algoritmin suorituskyky
-laskemalla ja tulostamalla confusion matrix.
+### Vaiheet
+1. Kloonaa GitHub-repositorio:  
+   🔗 [https://github.com/kajyrkka/TL_Project_Week6](https://github.com/kajyrkka/TL_Project_Week6)
+2. Käännä repositoryn mukana tullut NRF5340DK-ohjelma ja tutustu koodin rakenteeseen.  
+3. Täydennä `confusion.c`-tiedoston puuttuvat aliohjelmat.  
+4. Suorita mittaukset omalla NRF5340DK-laitteellasi ja kiihtyvyysanturilla (sama anturi kuin viikoilla 2 ja 3).  
+   Tee **noin 100 mittausta jokaiseen 6 suuntaan**.  
 
+### Lopputulos
+- Laske ja piirrä **confusion matrix**, joka kuvaa K-means-luokittelijan tarkkuutta.  
+- Lisää confusion matrix -kuva omaan GitHub-repositoriosi `README.md`-tiedostoon.
 
+📺 Jos et pääse alkuun, katso ohjevideolta selitys koodin toiminnasta ja tehtävästä:  
+🔗 [https://youtu.be/O2OIN-gJeo4](https://youtu.be/O2OIN-gJeo4)
+
+---
+
+## 🚀 Viikon 6 – Ylimääräiset tehtävät (valinnaiset)
+
+### 🧩 1️⃣ CNN:n toteutus NRF5340DK-mikrokontrollerissa
+
+Tässä lisätehtävässä toteutetaan aiemmin opetettu konvoluutioneuroverkko (CNN) **C-kielellä** Nordic Semiconductorin NRF5340DK-alustalle.
+
+---
+
+### 🔍 Vaihe 1 – Muistin ja suoritusajan analyysi
+Laadi **Excel-dokumentti**, jossa arvioit opettamasi CNN-mallin:
+- Muistin tarpeen (parametrit, aktivointien määrä)
+- Suoritusajan (arvio mikrokontrollerilla)
+
+---
+
+### 🧠 Vaihe 2 – CNN:n toteutus Pythonilla (testidatan generointi)
+Toteuta opettamasi CNN Pythonilla kerros kerrokselta (samaa tyyliä kuin "Koneoppimisen perusteet" -projektissa).  
+Python-ohjelma voi generoida seuraavat tiedostot:
+
+- **`input.h`** → sisältää testattavan kerroksen syötteen  
+- **`output.h`** → sisältää testattavan kerroksen oikean tuloksen  
+
+Näitä tiedostoja käytetään C-kielisessä toteutuksessa tulosten vertailuun.  
+
+Pythonilla voit tulostaa myös mallin eri kerrosten parametrit (esim. suodattimet ja bias-arvot).
+
+---
+
+### ⚙️ Vaihe 3 – CNN:n toteutus C-kielellä
+Toteuta CNN-mallisi **C-kielellä**, kerros kerrokselta, alkaen luokittelukerroksista.  
+
+Tee jokaisesta kerroksesta aliohjelma, jolle:
+- Syötetään `input.h`-tiedoston data  
+- Verrataan tulosta `output.h`-tiedoston oikeaan arvoon  
+
+Tämä varmistaa, että C-toteutuksen laskenta vastaa Python-mallin tuloksia.
+
+---
+
+## 📋 Yhteenveto
+
+| Osa | Tavoite | Tuotos |
+|------|----------|---------|
+| **1. K-means-luokittelija** | Toteuta ja testaa NRF5340DK-alustalla | Confusion matrix |
+| **2. (Valinnainen)** CNN | Arvioi ja toteuta CNN C-kielellä mikrokontrollerissa | CNN C-toteutus + vertailutiedostot |
+
+---
+
+**💡 Muista:**  
+Dokumentoi eteneminen Scrum-raporteissa, päivitä Kanban-taulu ja lisää tulokset omaan GitHub-repositorioon.
+
+**Tsemppiä viikon 6 projektiin! 🚀**
