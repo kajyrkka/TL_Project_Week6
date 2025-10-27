@@ -67,12 +67,11 @@ Laadi **Excel-dokumentti**, jossa arvioit opettamasi CNN-mallin:
 Toteuta opettamasi CNN Pythonilla kerros kerrokselta (samaa tyyliä kuin "Koneoppimisen perusteet" -projektissa).  
 Python-ohjelma voi generoida seuraavat tiedostot:
 
-- **`input.h`** → sisältää testattavan kerroksen syötteen  
+- **`input.h`** → sisältää testattavan kerroksen syötteen ja mallin parametrit  
 - **`output.h`** → sisältää testattavan kerroksen oikean tuloksen  
 
 Näitä tiedostoja käytetään C-kielisessä toteutuksessa tulosten vertailuun.  
 
-Pythonilla voit tulostaa myös mallin eri kerrosten parametrit (esim. suodattimet ja bias-arvot).
 
 ---
 
