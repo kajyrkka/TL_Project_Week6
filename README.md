@@ -1,81 +1,54 @@
-# 🧩 TL_Project_Week6
+# TL_Project_Week6
 
-## 🎯 Viikon perustavoite
-Tämän viikon päätavoitteena on toteuttaa **K-means-luokittelija-algoritmi NRF5340DK-alustalle**.  
-Lisätehtävänä voit toteuttaa **konvoluutioneuroverkon (CNN)** mikrokontrollerissa C-kielellä.
-
----
-
-## ⚙️ 0. Ohjeet Scrum-tiimille (= 6 työparia)
-
-### Viikon vastuullisen työparin tehtävät
-- Järjestää **daily-palaverit keskiviikkoisin ja torstaisin**  
-- Raportoi Scrum-tiimin **Discord-kanavalle**:
-  - Ketkä olivat paikalla  
-  - Missä vaiheessa kukin työpari on menossa  
-  - Mahdolliset ongelmat  
-- Järjestää **sprint review -palaverin perjantaina**  
-- Laatii **Discordiin raportin viikon tuloksista** (mukaan lukien seuraavan viikon vastuullinen työpari)
-
-### Kanban-suunnitelma
-Laadi GitHubin **projektin Kanban-tauluun** suunnitelma, miten aiotte toteuttaa ja testata viikon tehtävät.  
-Pilkkoa tarvittaessa tehtävät pienempiin osiin, kuten:
-- 1️⃣ Etäisyyden laskenta-aliohjelma (3D-pisteiden välinen etäisyys)
-- 2️⃣ Confusion matrixin laskenta ja visualisointi
-
----
-
-## 🧠 1. K-means-luokittelijan toteutus NRF5340DK-alustalla
-
-### Tavoite
+## Viikon 6 tavoite (arvosana max 3)
 Toteuta K-means-luokittelija-algoritmi, joka mittaa kiihtyvyysanturilla **x, y, z -arvot** ja laskee tämän 3D-pisteen etäisyyden kaikkiin kuuteen keskipisteeseen, jotka opetettiin Pythonilla edellisellä viikolla.  
 Keskipisteet tuodaan ohjelmaan `keskipisteet.h`-tiedostona.
+
+
+## 1.1 K-means-luokittelijan toteutus NRF5340DK-alustalla
 
 ### Vaiheet
 1. Kloonaa GitHub-repositorio:  
    🔗 [https://github.com/kajyrkka/TL_Project_Week6](https://github.com/kajyrkka/TL_Project_Week6)
-2. Käännä repositoryn mukana tullut NRF5340DK-ohjelma ja tutustu koodin rakenteeseen.  
-3. Täydennä `confusion.c`-tiedoston puuttuvat aliohjelmat.  
-4. Suorita mittaukset omalla NRF5340DK-laitteellasi ja kiihtyvyysanturilla (sama anturi kuin viikoilla 2 ja 3).  
+2. Käännä repositoryn mukana tullut NRF5340DK-ohjelma ja **selvitä annetun koodin toiminta**.  
+3. Täydennä `confusion.c`-tiedoston puuttuvat aliohjelmat siten, että voit syntyneen ohjelman avulla:
+    1) valita suuntamuuttujalle arvon 0,1,2,3,4,5 (=valittuSuunta)
+    2) tehdä 100 kpl mittauksia kiihtyvyysanturista
+    3) tehdä jokaiselle mitatulle kiihtyvyysanturitulokselle suuntaluokittelun 0,1,2,3,4,5 (=tunnistettuSuunta)
+    4) tallettaa jokainen luokittelu taulukkoon confMatrix[valittuSuunta,tunnistettuSuunta] = confMatrix[valittuSuunta,tunnistettuSuunta] + 1
+4. Suorita mittaukset omalla NRF5340DK-laitteellasi ja kiihtyvyysanturilla (sama anturi kuin viikoilla 2 ja 5).  
    Tee **noin 100 mittausta jokaiseen 6 suuntaan**.  
+5. Tulosta syntynyt confusion matrix tieto sarjaportin kautta PC
+6. Tee PC:llä Python ohjelma, joka lukee sarjaportin confusion matrix tiedon ja piirtää siitä kuvan.
+7. Lisää confusion matrix kuva oman Github-repositoriosi Readme.md tiedostoon.
+   
 
-### Lopputulos
-- Laske ja piirrä **confusion matrix**, joka kuvaa K-means-luokittelijan tarkkuutta.  
-- Lisää confusion matrix -kuva omaan GitHub-repositoriosi `README.md`-tiedostoon.
+## Viikon 6 – lisätavoite (arvosanat max 4-5)
 
-📺 Jos et pääse alkuun, katso ohjevideolta selitys koodin toiminnasta ja tehtävästä:  
-🔗 [https://youtu.be/O2OIN-gJeo4](https://youtu.be/O2OIN-gJeo4)
-
----
-
-## 🚀 Viikon 6 – Ylimääräiset tehtävät (valinnaiset)
-
-### 🧩 1️⃣ CNN:n toteutus NRF5340DK-mikrokontrollerissa
+### CNN:n toteutus NRF5340DK-mikrokontrollerissa
 
 Tässä lisätehtävässä toteutetaan aiemmin opetettu konvoluutioneuroverkko (CNN) **C-kielellä** Nordic Semiconductorin NRF5340DK-alustalle.
 
----
 
-### 🔍 Vaihe 1 – Muistin ja suoritusajan analyysi
+### Vaihe 1 – Muistin ja suoritusajan analyysi
 Laadi **Excel-dokumentti**, jossa arvioit opettamasi CNN-mallin:
 - Muistin tarpeen (parametrit, aktivointien määrä)
 - Suoritusajan (arvio mikrokontrollerilla)
 
----
 
-### 🧠 Vaihe 2 – CNN:n toteutus Pythonilla (testidatan generointi)
+### Vaihe 2 – CNN:n toteutus Pythonilla (testidatan generointi)
 Toteuta opettamasi CNN Pythonilla kerros kerrokselta (samaa tyyliä kuin "Koneoppimisen perusteet" -projektissa).  
-Python-ohjelma voi generoida seuraavat tiedostot:
+Toteuta Colabissa Python ohjelma, joka tekee seuraavat tehtävät:
 
-- **`input.h`** → sisältää testattavan kerroksen syötteen ja mallin parametrit  
-- **`output.h`** → sisältää testattavan kerroksen oikean tuloksen  
+1. Luetaan viikolla 5 opetettu malli sisään (model_export.keras)
+2. Valitaan mallista haluttu mallin kerros (layer), josta tulostetaan kahteen tiedostoon seuraavat tiedot:
+    - **`input.h`** → sisältää testattavan kerroksen syötteen = input tähän kerroksen ja mallin tämän kerroksen parametrit  
+    - **`output.h`** → sisältää testattavan kerroksen oikean output tuloksen  
 
 Näitä tiedostoja käytetään C-kielisessä toteutuksessa tulosten vertailuun.  
 
 
----
-
-### ⚙️ Vaihe 3 – CNN:n toteutus C-kielellä
+### Vaihe 3 – CNN:n toteutus C-kielellä
 Toteuta CNN-mallisi **C-kielellä**, kerros kerrokselta, alkaen luokittelukerroksista.  
 
 Tee jokaisesta kerroksesta aliohjelma, jolle:
@@ -84,18 +57,7 @@ Tee jokaisesta kerroksesta aliohjelma, jolle:
 
 Tämä varmistaa, että C-toteutuksen laskenta vastaa Python-mallin tuloksia.
 
----
+### Vaihe 4 
+Toista vaiheita 2 ja 3 niin pitkälle kuin ehdit, kaikkia kerroksia ei tarvitse saada toteutettua hyväksyttyyn lisätehtävään.
 
-## 📋 Yhteenveto
 
-| Osa | Tavoite | Tuotos |
-|------|----------|---------|
-| **1. K-means-luokittelija** | Toteuta ja testaa NRF5340DK-alustalla | Confusion matrix |
-| **2. (Valinnainen)** CNN | Arvioi ja toteuta CNN C-kielellä mikrokontrollerissa | CNN C-toteutus + vertailutiedostot |
-
----
-
-**💡 Muista:**  
-Dokumentoi eteneminen Scrum-raporteissa, päivitä Kanban-taulu ja lisää tulokset omaan GitHub-repositorioon.
-
-**Tsemppiä viikon 6 projektiin! 🚀**
