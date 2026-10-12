@@ -5,7 +5,7 @@ Toteuta K-means-luokittelija-algoritmi, joka mittaa kiihtyvyysanturilla **x, y, 
 Keskipisteet tuodaan ohjelmaan `keskipisteet.h`-tiedostona.
 
 
-## 1.1 K-means-luokittelijan toteutus NRF5340DK-alustalla
+## K-means-luokittelijan toteutus NRF5340DK-alustalla
 
 ### Vaiheet
 1. Kloonaa GitHub-repositorio:  
