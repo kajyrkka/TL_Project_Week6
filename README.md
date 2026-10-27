@@ -30,13 +30,14 @@ Keskipisteet tuodaan ohjelmaan `keskipisteet.h`-tiedostona.
 Tässä lisätehtävässä toteutetaan aiemmin opetettu konvoluutioneuroverkko (CNN) **C-kielellä** Nordic Semiconductorin NRF5340DK-alustalle.
 
 
-### Vaihe 1 – Muistin ja suoritusajan analyysi
+### Vaihe 1 – Arvioidaan opetetun CNN-mallin toteutettavuutta Nordicin alustalla
 Laadi **Excel-dokumentti**, jossa arvioit opettamasi CNN-mallin:
 - Muistin tarpeen (parametrit, aktivointien määrä)
 - Suoritusajan (arvio mikrokontrollerilla)
+Dokumentoi analyysisi github repositorysi ReadMe.md dokumenttiin. Kerro analyysissäsi, mikä mallin layer vaatii eniten laskentaa ja laske/arvioi mallin suoritusaika Nordicin mikrokontrollerissa.
 
 
-### Vaihe 2 – CNN:n toteutus Pythonilla (testidatan generointi)
+### Vaihe 2 – CNN:n toteutus Pythonilla (testidatan generointi Colabista C-kieliseen toteutukseen)
 Toteuta opettamasi CNN Pythonilla kerros kerrokselta (samaa tyyliä kuin "Koneoppimisen perusteet" -projektissa).  
 Toteuta Colabissa Python ohjelma, joka tekee seuraavat tehtävät:
 
@@ -57,7 +58,7 @@ Tee jokaisesta kerroksesta aliohjelma, jolle:
 
 Tämä varmistaa, että C-toteutuksen laskenta vastaa Python-mallin tuloksia.
 
-### Vaihe 4 
-Toista vaiheita 2 ja 3 niin pitkälle kuin ehdit, kaikkia kerroksia ei tarvitse saada toteutettua hyväksyttyyn lisätehtävään.
+### Vaihe 4 Toteuta ainakin yksi CNN-mallin kerros Nordicissa C-kielellä ja todista, että se antaa samat tulokset Colab Python mallin kanssa
+Toista vaiheita 2 ja 3 niin pitkälle kuin ehdit, kaikkia kerroksia ei tarvitse saada toteutettua hyväksyttyyn lisätehtävään. Yhden layerin toteuttaminen riittää hyväksyttyyn tehtävään.
 
 
